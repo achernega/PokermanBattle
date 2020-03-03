@@ -1,17 +1,4 @@
 
-
-/**
- * Title:
- * Description:
- * Copyright:    Copyright (c) 2001
- * Company:
- * @author
- * @version 1.0
- */
-
-
-
-
 public class Warrior extends Hero
 {
 
@@ -48,9 +35,7 @@ public class Warrior extends Hero
 		super.attack(opponent);
 	}//end override of attack method
 
-
-
-
+	
     public void battleChoices(DungeonCharacter opponent)
 	{
 		int choice;

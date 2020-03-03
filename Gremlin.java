@@ -1,14 +1,4 @@
 
-
-/**
- * Title:
- * Description:
- * Copyright:    Copyright (c) 2001
- * Company:
- * @author
- * @version 1.0
- */
-
 public class Gremlin extends Monster
 {
 
@@ -25,6 +15,5 @@ public class Gremlin extends Monster
 		super.attack(opponent);
 
 	}//end override of attack
-
 
 }//end class Gremlin
