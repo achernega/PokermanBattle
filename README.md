@@ -7,3 +7,4 @@
 5. attack interface (strategy pattern)
 6. change fields to private
 7. change keyboard to scanner
+8. delete dead code (DungeonCharacter is comparable but never uses compareTo?)
