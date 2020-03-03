@@ -1,6 +1,6 @@
 # PokermanBattle
 
-1. delete comments
+1. delete comments //Done-Jay
 2. create a package
 3. rename methods and fields
 4. hero and monster factory (simple factory with createHero and createMonster
