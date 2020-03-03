@@ -1,22 +1,10 @@
-
-
-/**
- * Title:
- * Description:
- * Copyright:    Copyright (c) 2001
- * Company:
- * @author
- * @version 1.0
- */
-
-
+import java.util.Scanner;
 
 public class Sorceress extends Hero
 {
 	public final int MIN_ADD = 25;
 	public final int MAX_ADD = 50;
 
-//-----------------------------------------------------------------
     public Sorceress()
 	{
 		super("Sorceress", 75, 5, .7, 25, 50, .3);
@@ -24,7 +12,6 @@ public class Sorceress extends Hero
 
     }//end constructor
 
-//-----------------------------------------------------------------
 	public void increaseHitPoints()
     {
 	    int hPoints;
@@ -38,7 +25,6 @@ public class Sorceress extends Hero
 
     }//end increaseHitPoints method
 
-//-----------------------------------------------------------------
 	public void attack(DungeonCharacter opponent)
 	{
 		System.out.println(name + " casts a spell of fireball at " +
@@ -46,9 +32,9 @@ public class Sorceress extends Hero
 		super.attack(opponent);
 	}//end override of attack method
 
-//-----------------------------------------------------------------
     public void battleChoices(DungeonCharacter opponent)
 	{
+    	Scanner sc = new Scanner(System.in);
 		super.battleChoices(opponent);
 		int choice;
 
@@ -57,7 +43,7 @@ public class Sorceress extends Hero
 		    System.out.println("1. Attack Opponent");
 		    System.out.println("2. Increase Hit Points");
 		    System.out.print("Choose an option: ");
-		    choice = Keyboard.readInt();
+		    choice = sc.nextInt();
 
 		    switch (choice)
 		    {

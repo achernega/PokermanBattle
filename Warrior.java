@@ -1,16 +1,4 @@
-
-
-/**
- * Title:
- * Description:
- * Copyright:    Copyright (c) 2001
- * Company:
- * @author
- * @version 1.0
- */
-
-
-
+import java.util.Scanner;
 
 public class Warrior extends Hero
 {
@@ -48,11 +36,10 @@ public class Warrior extends Hero
 		super.attack(opponent);
 	}//end override of attack method
 
-
-
-
+	
     public void battleChoices(DungeonCharacter opponent)
 	{
+    	Scanner sc = new Scanner(System.in);
 		int choice;
 
 		super.battleChoices(opponent);
@@ -62,7 +49,7 @@ public class Warrior extends Hero
 		    System.out.println("1. Attack Opponent");
 		    System.out.println("2. Crushing Blow on Opponent");
 		    System.out.print("Choose an option: ");
-		    choice = Keyboard.readInt();
+		    choice = sc.nextInt();
 
 		    switch (choice)
 		    {

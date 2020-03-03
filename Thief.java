@@ -1,13 +1,4 @@
-
-
-/**
- * Title:
- * Description:
- * Copyright:    Copyright (c) 2001
- * Company:
- * @author
- * @version 1.0
- */
+import java.util.Scanner;
 
 public class Thief extends Hero
 {
@@ -15,8 +6,6 @@ public class Thief extends Hero
     public Thief()
 	{
 		super("Thief", 75, 6, .8, 20, 40, .5);
-
-
 
     }//end constructor
 
@@ -41,19 +30,18 @@ public class Thief extends Hero
 
 	}//end surpriseAttack method
 
-
     public void battleChoices(DungeonCharacter opponent)
 	{
+    	Scanner sc = new Scanner(System.in);
 		super.battleChoices(opponent);
 		int choice;
-
-
+		
 		do
 		{
 		    System.out.println("1. Attack Opponent");
 		    System.out.println("2. Surprise Attack");
 		    System.out.print("Choose an option: ");
-		    choice = Keyboard.readInt();
+		    choice = sc.nextInt();
 
 		    switch (choice)
 		    {
