@@ -4,12 +4,12 @@ public class HeroFactory {
 	
 	public static Hero createHero() {
 		int choice;
-		
-		Scanner kb = new Scanner(System.in);
+
 		System.out.println("Choose a hero:\n" +
 					       "1. Warrior\n" +
 						   "2. Sorceress\n" +
 						   "3. Thief");
+		Scanner kb = new Scanner(System.in);
 		choice = kb.nextInt();
 
 		switch(choice)
