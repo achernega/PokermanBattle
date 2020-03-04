@@ -1,8 +1,6 @@
-import java.util.*;
 
 public class Dungeon
 {
-	
     public static void main(String[] args)
 	{
 
@@ -11,40 +9,48 @@ public class Dungeon
 
 		do
 		{
-		    theHero = chooseHero();
-		    theMonster = generateMonster();
+		    theHero = HeroFactory.createHero();
+		    theMonster = MonsterFactory.createMonster();
 			battle(theHero, theMonster);
 
 		} while (playAgain());
 
     }//end main method
 
-	public static Hero chooseHero()
+/*-------------------------------------------------------------------
+chooseHero allows the user to select a hero, creates that hero, and
+returns it.  It utilizes a polymorphic reference (Hero) to accomplish
+this task
+---------------------------------------------------------------------*/
+/*	public static Hero chooseHero()
 	{
-		Scanner sc = new Scanner(System.in);
 		int choice;
-		Hero theHero;
+		//Hero theHero; DEAD CODE
 
 		System.out.println("Choose a hero:\n" +
 					       "1. Warrior\n" +
 						   "2. Sorceress\n" +
 						   "3. Thief");
-		choice = sc.nextInt();
+		choice = Keyboard.readInt();
 
 		switch(choice)
 		{
-			case 1: return new Warrior();
+			case 1: return HeroFactory.createHero("Warrior");
 
-			case 2: return new Sorceress();
+			case 2: return HeroFactory.createHero("Sorceress");
 
-			case 3: return new Thief();
+			case 3:return  HeroFactory.createHero("Thief");
 
 			default: System.out.println("invalid choice, returning Thief");
-				     return new Thief();
-		}//end switch
+				return HeroFactory.createHero("Thief");
+		}//end switch 
 	}//end chooseHero method
-
-	public static Monster generateMonster()
+*/
+/*-------------------------------------------------------------------
+generateMonster randomly selects a Monster and returns it.  It utilizes
+a polymorphic reference (Monster) to accomplish this task.
+---------------------------------------------------------------------*/
+/*	public static Monster generateMonster()
 	{
 		int choice;
 
@@ -62,21 +68,30 @@ public class Dungeon
 				     return new Skeleton();
 		}//end switch
 	}//end generateMonster method
-
+*/
+/*-------------------------------------------------------------------
+playAgain allows gets choice from user to play another game.  It returns
+true if the user chooses to continue, false otherwise.
+---------------------------------------------------------------------*/
 	public static boolean playAgain()
 	{
-		Scanner sc = new Scanner(System.in);
 		char again;
 
 		System.out.println("Play again (y/n)?");
-		again = sc.next().charAt(0);
+		again = Keyboard.readChar();
 
 		return (again == 'Y' || again == 'y');
 	}//end playAgain method
 
+
+/*-------------------------------------------------------------------
+battle is the actual combat portion of the game.  It requires a Hero
+and a Monster to be passed in.  Battle occurs in rounds.  The Hero
+goes first, then the Monster.  At the conclusion of each round, the
+user has the option of quitting.
+---------------------------------------------------------------------*/
 	public static void battle(Hero theHero, Monster theMonster)
 	{
-		Scanner sc = new Scanner(System.in);
 		char pause = 'p';
 		System.out.println(theHero.getName() + " battles " +
 							theMonster.getName());
@@ -94,7 +109,7 @@ public class Dungeon
 
 			//let the player bail out if desired
 			System.out.print("\n-->q to quit, anything else to continue: ");
-			pause = sc.next().charAt(0);
+			pause = Keyboard.readChar();
 
 		}//end battle loop
 
