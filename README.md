@@ -7,4 +7,4 @@
 5. attack interface (strategy pattern)
 6. change fields to private
 7. change keyboard to scanner //jbrown
-8. delete dead code //achernega
+8. delete dead code (useless Comparable impl.) //achernega
