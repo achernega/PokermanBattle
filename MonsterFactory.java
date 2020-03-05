@@ -1,20 +1,20 @@
 
 public class MonsterFactory {
 	
-	public static Monster createMonster() {
-		int choice;
-		choice = (int)(Math.random() * 3) + 1;
-		switch(choice)
+	public Monster createMonster(String choice)
+	{
+		Monster monster;
+		if(choice.equals("Ogre"))
+			monster = new Ogre();
+		else if(choice.equals("Gremlin"))
+			monster = new Gremlin();
+		else if(choice.equals("Skeleton"))
+				monster = new Skeleton();
+		else
 		{
-			case 1: return new Ogre();
-
-			case 2: return new Gremlin();
-
-			case 3: return new Skeleton();
-
-			default: System.out.println("invalid choice, returning Skeleton");
-				     return new Skeleton();
+			System.out.println("Invalid choice, returning Thief");
+			monster = new Skeleton();
 		}
+		return monster;
 	}
-
 }
