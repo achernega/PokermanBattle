@@ -1,5 +1,3 @@
-# PokermanBattle
-
 1. Deleted excessive and messy comments //jbrown
 2. Replaced the many redundant System.out.println calls //achernega
     -> ex. see battleChoices method in Warrior class

@@ -2,50 +2,51 @@ import java.util.Scanner;
 
 public abstract class Hero extends DungeonCharacter
 {
-	protected double chanceToBlock;
-	protected int numTurns;
+	private double chanceToBlock;
+	private int numTurns;
+	private SpecialPower specialPower;
 
-//-----------------------------------------------------------------
-//calls base constructor and gets name of hero from user
-  public Hero(String name, int hitPoints, int attackSpeed,
-				     double chanceToHit, int damageMin, int damageMax,
-					 double chanceToBlock)
-  {
-	super(name, hitPoints, attackSpeed, chanceToHit, damageMin, damageMax);
-	this.chanceToBlock = chanceToBlock;
-	readName();
-  }
+	//-----------------------------------------------------------------
+	//calls base constructor and gets name of hero from user
+	public Hero(String name, int hitPoints, int attackSpeed,
+			double chanceToHit, int damageMin, int damageMax,
+			double chanceToBlock)
+	{
+		super(name, hitPoints, attackSpeed, chanceToHit, damageMin, damageMax);
+		this.chanceToBlock = chanceToBlock;
+		readName();
+	}
 
-  public void readName()
-  {
-	  Scanner sc = new Scanner(System.in);
-		System.out.print("Enter character name: ");
-		name = sc.next();
-  }//end readName method
+	public void readName()
+	{
+		System.out.println("Enter character name: ");
+		Scanner kb = new Scanner(System.in);
+		String nam = kb.nextLine();
+		setName(nam);
+	}//end readName method
 
-  public boolean defend()
-  {
+	public void usePower()
+	{
+		specialPower.usePower();
+	}
+
+	public boolean defend()
+	{
 		return Math.random() <= chanceToBlock;
 
-  }//end defend method
+	}//end defend method
 
-public void subtractHitPoints(int hitPoints)
+	public void subtractHitPoints(int hitPoints)
 	{
 		if (defend())
-		{
-			System.out.println(name + " BLOCKED the attack!");
-		}
+			System.out.println(getName() + " BLOCKED the attack!");
 		else
-		{
 			super.subtractHitPoints(hitPoints);
-		}
-
-
 	}//end method
 
 	public void battleChoices(DungeonCharacter opponent)
 	{
-	    numTurns = attackSpeed/opponent.getAttackSpeed();
+		numTurns = getAttackSpeed()/opponent.getAttackSpeed();
 
 		if (numTurns == 0)
 			numTurns++;
@@ -53,5 +54,35 @@ public void subtractHitPoints(int hitPoints)
 		System.out.println("Number of turns this round is: " + numTurns);
 
 	}//end battleChoices
+
+	public double getChanceToBlock()
+	{
+		return chanceToBlock;
+	}
+
+	public void setChanceToBlock(double chanceToBlock)
+	{
+		this.chanceToBlock = chanceToBlock;
+	}
+
+	public int getNumTurns()
+	{
+		return numTurns;
+	}
+
+	public void setNumTurns(int numTurns)
+	{
+		this.numTurns = numTurns;
+	}
+
+	public SpecialPower getSpecialPower()
+	{
+		return specialPower;
+	}
+
+	public void setSpecialPower(SpecialPower specialPower)
+	{
+		this.specialPower = specialPower;
+	}
 
 }//end Hero class
