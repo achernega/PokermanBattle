@@ -11,7 +11,7 @@ public class GameSetup
 		monster = spawnMonster();
 	}
 
-	public static Hero chooseHero() {
+	public Hero chooseHero() {
 		int choice;
 		HeroFactory hf = new HeroFactory();
 		Scanner kb = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class GameSetup
 		}
 	}
 
-	public static Monster spawnMonster()
+	public Monster spawnMonster()
 	{
 		MonsterFactory mf = new MonsterFactory();
 		int choice = (int)(Math.random() * 3) + 1;

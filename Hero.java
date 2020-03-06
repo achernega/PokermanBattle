@@ -55,16 +55,6 @@ public abstract class Hero extends DungeonCharacter
 
 	}//end battleChoices
 
-	public double getChanceToBlock()
-	{
-		return chanceToBlock;
-	}
-
-	public void setChanceToBlock(double chanceToBlock)
-	{
-		this.chanceToBlock = chanceToBlock;
-	}
-
 	public int getNumTurns()
 	{
 		return numTurns;

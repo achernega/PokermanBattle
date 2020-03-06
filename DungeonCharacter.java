@@ -91,50 +91,9 @@ public abstract class DungeonCharacter
 	{
 		return attackSpeed;
 	}//end getAttackSpeed
-	
-	public double getChanceToHit()
-	{
-		return chanceToHit;
-	}
-
-	public void setChanceToHit(double chanceToHit)
-	{
-		this.chanceToHit = chanceToHit;
-	}
-
-	public int getDamageMin()
-	{
-		return damageMin;
-	}
-
-	public void setDamageMin(int damageMin)
-	{
-		this.damageMin = damageMin;
-	}
-
-	public int getDamageMax()
-	{
-		return damageMax;
-	}
-
-	public void setDamageMax(int damageMax)
-	{
-		this.damageMax = damageMax;
-	}
 
 	public void setName(String name)
 	{
 		this.name = name;
 	}
-
-	public void setHitPoints(int hitPoints)
-	{
-		this.hitPoints = hitPoints;
-	}
-
-	public void setAttackSpeed(int attackSpeed)
-	{
-		this.attackSpeed = attackSpeed;
-	}
-
 }//end class Character
